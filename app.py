@@ -1,9 +1,10 @@
 import dash
 from dash import html
 
-# Initialize Dash app
+# Create the Dash app
 app = dash.Dash(__name__)
-server = app.server  # Expose the Flask server for Gunicorn
+server = app.server
+
 
 # Define the layout
 app.layout = html.Div([
@@ -11,5 +12,5 @@ app.layout = html.Div([
     html.P("This is a simple Dash app.", style={"textAlign": "center"})
 ])
 
-if __name__ == "__main__":
-    app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=False)
