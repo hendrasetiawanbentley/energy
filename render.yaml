@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-dash-app  # Replace with your app's name
+    env: python
+    region: oregon  # Or a region closer to your users (options: oregon, frankfurt, singapore, etc.)
+    pythonVersion: 3.11
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: gunicorn app:server  # Replace 'app' with your Python file name
